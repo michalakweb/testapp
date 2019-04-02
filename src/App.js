@@ -67,11 +67,19 @@ class App extends Component {
   // Lifecycle
 
   componentDidMount() {
-    const options = JSON.parse(localStorage.getItem('options'));
-    this.setState(() => ({
-      options: options
-    }))
-  }
+    try {
+        const json = localStorage.getItem('options');
+        const options = JSON.parse(json);
+
+        if(options) {
+         this.setState(() => ({ options }));
+        }
+    }
+
+    catch (e) {
+        //Do nothing
+    } 
+}
 
   componentDidUpdate() {
     const options = JSON.stringify(this.state.options);
