@@ -90,7 +90,7 @@ class App extends Component {
             <Col sm={8}>
               <SelectOption 
               handleRandom={this.handleRandom} 
-              optionsAvailable={this.state.options.length}
+              optionsAvailable={this.state.options}
               selectedOption={this.state.selectedOption}
               />
             </Col>
